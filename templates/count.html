@@ -1,0 +1,24 @@
+
+
+<!-- old stuff
+<a href= "{% url 'home' %}">Start over</a>
+<button type="button">Click Me!</button>
+-->
+
+<form>
+<input type="button" value="Start over" onclick="window.location.href='{% url 'home' %}'" />
+</form>
+
+<h1 style="font-family:courier;"> {{ message }} </h1>
+
+<h2 style="font-family:courier;">Your text:</h2>
+{{ fulltext }}
+
+<h2 style="font-family:courier;">Indivdual word tally:</h2>
+{% for word, counttotal in sortedwords %}
+{{ word }} - {{ counttotal }}
+<br />
+{% endfor %}
+<br />
+<br />
+<a href= "{% url 'home' %}">home</a>   <a href= "{% url 'about' %}">about</a>
